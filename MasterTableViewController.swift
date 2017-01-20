@@ -50,7 +50,7 @@ class MasterTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GeneCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.masterGeneCellIdentifier , for: indexPath)
         let gene: Gene
         if searchController.isActive && searchController.searchBar.text != "" {
             gene = filtedGenes[indexPath.row]
@@ -64,9 +64,9 @@ class MasterTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MasterHeaderCellIdentifier")
-        cell?.textLabel?.text = "Gene Name"
-        cell?.detailTextLabel?.text = "Accession Number"
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.masterHeaderCellIdentifier)
+        cell?.textLabel?.text = TextLabel.headerCellTextLabel
+        cell?.detailTextLabel?.text = TextLabel.headerCellDetailTextLabel
         return cell
     }
     
@@ -88,7 +88,7 @@ class MasterTableViewController: UITableViewController {
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowDetail" {
+        if segue.identifier == SegueIdentifier.showDetailFromMasterToDetail {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let detailTableViewController = segue.destination as! DetailTableViewController
                 let gene: Gene

@@ -10,8 +10,9 @@ import UIKit
 
 class SavedTableViewController: UITableViewController {
     
+    // MARK: - Properties
     var savedGeneNames: [String?]? {
-        return UserDefaults.standard.object(forKey: "savedGenes") as? [String?]
+        return UserDefaults.standard.object(forKey: ConstantString.userDefaultsKey) as? [String?]
     }
     
     var genes: [Gene] {
@@ -21,8 +22,10 @@ class SavedTableViewController: UITableViewController {
         }
     }
 
+    // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,6 +33,12 @@ class SavedTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
 
     
 
@@ -47,12 +56,13 @@ class SavedTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SavedCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.savedCellIdentifier, for: indexPath)
         if let savedGeneName = savedGeneNames?[indexPath.row] {
             for gene in genes {
                 if gene.geneName == savedGeneName {
                     cell.textLabel?.text = gene.geneName
                     cell.detailTextLabel?.text = gene.accessionNumber
+                    break
                 }
             }
             
@@ -61,12 +71,15 @@ class SavedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SavedHeaderCellIdentifier")
-        cell?.textLabel?.text = "Gene Name"
-        cell?.detailTextLabel?.text = "Accession Number"
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.savedHeaderIdentifier)
+        cell?.textLabel?.text = TextLabel.headerCellTextLabel
+        cell?.detailTextLabel?.text = TextLabel.headerCellDetailTextLabel
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 75.0
+    }
 
     /*
     // Override to support conditional editing of the table view.

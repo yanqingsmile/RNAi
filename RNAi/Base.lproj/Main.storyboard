@@ -89,7 +89,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="ILk-Eu-uY3" kind="show" identifier="ShowDetail" id="5w8-nV-Lhx"/>
+                                    <segue destination="ILk-Eu-uY3" kind="show" identifier="ShowDetailFromMaster" id="5w8-nV-Lhx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -116,40 +116,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="siRNADetailIdentifier" id="s8u-ad-ktj" userLabel="siRNADetailCell" customClass="DetailInformationTableViewCell" customModule="RNAi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s8u-ad-ktj" id="XFK-3t-oBF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sequenceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-3i-A8x" customClass="CopyableLabel" customModule="RNAi" customModuleProvider="target">
-                                            <rect key="frame" x="22" y="11.333333333333336" width="117" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="efficiencyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yva-g1-qQz" customClass="CopyableLabel" customModule="RNAi" customModuleProvider="target">
-                                            <rect key="frame" x="282" y="11.333333333333336" width="116" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Yva-g1-qQz" secondAttribute="trailing" constant="8" id="PPI-ee-Ds5"/>
-                                        <constraint firstItem="Yva-g1-qQz" firstAttribute="centerY" secondItem="XFK-3t-oBF" secondAttribute="centerY" id="cdX-wz-HrU"/>
-                                        <constraint firstItem="sk6-3i-A8x" firstAttribute="leading" secondItem="XFK-3t-oBF" secondAttribute="leadingMargin" constant="14" id="dI6-qN-tKR"/>
-                                        <constraint firstItem="sk6-3i-A8x" firstAttribute="centerY" secondItem="Yva-g1-qQz" secondAttribute="centerY" id="xDZ-fZ-m01"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="efficiencyLabel" destination="Yva-g1-qQz" id="9nC-4R-1De"/>
-                                    <outlet property="sequenceLabel" destination="sk6-3i-A8x" id="1vo-fD-HcW"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailHeaderCellIdentifier" rowHeight="145" id="SbB-Dk-ROa" userLabel="DetailHeaderCell" customClass="DetailHeaderTableViewCell" customModule="RNAi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="145"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="145"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SbB-Dk-ROa" id="IYC-pE-ELL">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="144.5"/>
@@ -228,6 +196,38 @@
                                     <outlet property="intendedTargetLabel" destination="D6A-qN-rsp" id="4Yu-ak-bTr"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="siRNADetailIdentifier" id="s8u-ad-ktj" userLabel="siRNADetailCell" customClass="DetailInformationTableViewCell" customModule="RNAi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="173" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s8u-ad-ktj" id="XFK-3t-oBF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sequenceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-3i-A8x" customClass="CopyableLabel" customModule="RNAi" customModuleProvider="target">
+                                            <rect key="frame" x="22" y="11.333333333333336" width="117" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="efficiencyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yva-g1-qQz" customClass="CopyableLabel" customModule="RNAi" customModuleProvider="target">
+                                            <rect key="frame" x="282" y="11.333333333333336" width="116" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Yva-g1-qQz" secondAttribute="trailing" constant="8" id="PPI-ee-Ds5"/>
+                                        <constraint firstItem="Yva-g1-qQz" firstAttribute="centerY" secondItem="XFK-3t-oBF" secondAttribute="centerY" id="cdX-wz-HrU"/>
+                                        <constraint firstItem="sk6-3i-A8x" firstAttribute="leading" secondItem="XFK-3t-oBF" secondAttribute="leadingMargin" constant="14" id="dI6-qN-tKR"/>
+                                        <constraint firstItem="sk6-3i-A8x" firstAttribute="centerY" secondItem="Yva-g1-qQz" secondAttribute="centerY" id="xDZ-fZ-m01"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="efficiencyLabel" destination="Yva-g1-qQz" id="9nC-4R-1De"/>
+                                    <outlet property="sequenceLabel" destination="sk6-3i-A8x" id="1vo-fD-HcW"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="ILk-Eu-uY3" id="fDb-Rw-HeT"/>
@@ -255,7 +255,7 @@
             </objects>
             <point key="canvasLocation" x="2481.1594202898555" y="-630.16304347826087"/>
         </scene>
-        <!--Saved-->
+        <!--Saved Table View Controller-->
         <scene sceneID="VLL-7L-eBX">
             <objects>
                 <tableViewController id="OoW-xt-IWW" customClass="SavedTableViewController" customModule="RNAi" customModuleProvider="target" sceneMemberID="viewController">
@@ -320,11 +320,11 @@
                             <outlet property="delegate" destination="OoW-xt-IWW" id="XWD-V5-lXI"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Saved" id="A3p-0R-dEX"/>
+                    <navigationItem key="navigationItem" id="7eE-kx-SCg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Miu-o0-hTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868.11594202898561" y="51.358695652173914"/>
+            <point key="canvasLocation" x="1775.3623188405797" y="51.358695652173914"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9C3-5V-JoW">
@@ -337,12 +337,32 @@
                     </tabBar>
                     <connections>
                         <segue destination="mYk-MB-VBI" kind="relationship" relationship="viewControllers" id="5OE-Sv-kXX"/>
-                        <segue destination="OoW-xt-IWW" kind="relationship" relationship="viewControllers" id="twW-vL-zik"/>
+                        <segue destination="70d-6Y-N3y" kind="relationship" relationship="viewControllers" id="twW-vL-zik"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fu-pz-Ywo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39.130434782608695" y="-289.4021739130435"/>
+        </scene>
+        <!--Saved-->
+        <scene sceneID="OGU-H9-AEB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="70d-6Y-N3y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved" id="A3p-0R-dEX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xEf-Ti-mRO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20392156859999999" green="0.7843137255" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OoW-xt-IWW" kind="relationship" relationship="rootViewController" id="5Mc-am-wwN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7il-BZ-abV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868.11594202898561" y="51.358695652173914"/>
         </scene>
     </scenes>
 </document>

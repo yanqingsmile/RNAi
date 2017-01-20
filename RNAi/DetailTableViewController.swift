@@ -13,12 +13,12 @@ class DetailTableViewController: UITableViewController {
 
     // MARK: - Properties
     var gene: Gene?
-    private var savedGeneNames = UserDefaults.standard.object(forKey: "savedGeneNames") as? [String?] ?? [String?]()
+    private var savedGeneNames = UserDefaults.standard.object(forKey: ConstantString.userDefaultsKey) as? [String?] ?? [String?]()
     
     // MARK: - IBActions
     @IBAction private func openNCBIPage(_ sender: UIButton) {
         let accessionNumber = sender.currentTitle!
-        let urlPrefix = "https://www.ncbi.nlm.nih.gov/gene/?term="
+        let urlPrefix = ConstantString.geneNCBIUrlPrefix
         let url = URL(string: urlPrefix + accessionNumber)
         let sfSafariVC = SFSafariViewController(url: url!)
         present(sfSafariVC, animated: true, completion: nil)
@@ -26,14 +26,19 @@ class DetailTableViewController: UITableViewController {
     
     @IBAction func share(_ sender: UIBarButtonItem) {
         print(gene!)
-        //let sharedText = "\(gene?.geneName)\t\(gene?.accessionNumber)"
+
         let vc = UIActivityViewController(activityItems: [gene?.description ?? ""], applicationActivities:[])
         present(vc, animated: true, completion: nil)
     }
     
     
     @IBAction func save(_ sender: UIBarButtonItem) {
-        UserDefaults.standard.set(gene?.geneName, forKey: "savedGeneNames")
+        let selectedGene = gene
+        if !savedGeneNames.contains(where: {$0 == selectedGene?.geneName}) {
+            savedGeneNames.append(gene?.geneName)
+            UserDefaults.standard.set(savedGeneNames, forKey: ConstantString.userDefaultsKey)
+        }
+        
     }
     
     // MARK: - View Setup
@@ -58,14 +63,14 @@ class DetailTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "siRNADetailIdentifier", for: indexPath) as! DetailInformationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailCellIdentifier, for: indexPath) as! DetailInformationTableViewCell
         cell.sequenceLabel.text = gene?.sequences[indexPath.row]
         cell.efficiencyLabel.text = ((gene?.efficiency[indexPath.row] ?? 0) * 100).roundTo2f() as String + " %"
         return cell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailHeaderCellIdentifier") as! DetailHeaderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailHeaderCellIdentifier) as! DetailHeaderTableViewCell
         cell.geneNameLabel.text = gene?.geneName
         cell.geneNumberButton.setTitle(gene?.accessionNumber, for: .normal)
         return cell
