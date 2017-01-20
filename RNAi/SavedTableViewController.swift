@@ -10,8 +10,15 @@ import UIKit
 
 class SavedTableViewController: UITableViewController {
     
-    var savedGenes: [String?]? {
-        return UserDefaults.standard.object(forKey: "savedGene") as! [String?]?
+    var savedGeneNames: [String?]? {
+        return UserDefaults.standard.object(forKey: "savedGenes") as? [String?]
+    }
+    
+    var genes: [Gene] {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.genes
+        }
     }
 
     override func viewDidLoad() {
@@ -30,23 +37,36 @@ class SavedTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return savedGeneNames?.count ?? 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SavedCellIdentifier", for: indexPath)
+        if let savedGeneName = savedGeneNames?[indexPath.row] {
+            for gene in genes {
+                if gene.geneName == savedGeneName {
+                    cell.textLabel?.text = gene.geneName
+                    cell.detailTextLabel?.text = gene.accessionNumber
+                }
+            }
+            
+        }
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SavedHeaderCellIdentifier")
+        cell?.textLabel?.text = "Gene Name"
+        cell?.detailTextLabel?.text = "Accession Number"
+        return cell
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

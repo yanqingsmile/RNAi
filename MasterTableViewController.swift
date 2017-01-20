@@ -13,9 +13,8 @@ class MasterTableViewController: UITableViewController {
     // MARK: - Properties
     var genes: [Gene] {
         get{
-            let gene1 = Gene(geneName: "ABI1", accessionNumber: "NM_005470", sequences: ["GAACAAAUCCUCUUACUCA", "UGAGAAAGUUGUUGCAAUA", "GCAGAUAUCUCGACACAAC", "GGAAAUAACCAGCCUGCAA"], efficiency: [0.6, 0.7, 0.8, 0.9])
-            let gene2 = Gene(geneName: "ABI2", accessionNumber: "NM_005759", sequences: ["GGAAUUACGUUGAGUCUAU", "GGAGGAAGCUGCUGUGGUU", "GGAAGGAGCCAUUAUUUAU", "GAUGGAAUCUUCAAUCAAU"], efficiency: [0.7, 0.8, 0.9, 1.0])
-            return [gene1, gene2]
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.genes
         }
     }
     var filtedGenes = [Gene]()

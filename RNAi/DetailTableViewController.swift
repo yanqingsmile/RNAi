@@ -13,6 +13,7 @@ class DetailTableViewController: UITableViewController {
 
     // MARK: - Properties
     var gene: Gene?
+    private var savedGeneNames = UserDefaults.standard.object(forKey: "savedGeneNames") as? [String?] ?? [String?]()
     
     // MARK: - IBActions
     @IBAction private func openNCBIPage(_ sender: UIButton) {
@@ -32,7 +33,7 @@ class DetailTableViewController: UITableViewController {
     
     
     @IBAction func save(_ sender: UIBarButtonItem) {
-        
+        UserDefaults.standard.set(gene?.geneName, forKey: "savedGeneNames")
     }
     
     // MARK: - View Setup
