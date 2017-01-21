@@ -13,7 +13,8 @@ class DetailTableViewController: UITableViewController {
 
     // MARK: - Properties
     var gene: Gene?
-    private var savedGeneNames = UserDefaults.standard.object(forKey: ConstantString.userDefaultsKey) as? [String?] ?? [String?]()
+    private var savedGeneNames = UserDefaults.standard.object(forKey: ConstantString.userDefaultsKey) as? [String] ?? [String]()
+    private let button = UIButton()
     
     // MARK: - IBActions
     @IBAction private func openNCBIPage(_ sender: UIButton) {
@@ -32,13 +33,19 @@ class DetailTableViewController: UITableViewController {
     }
     
     
-    @IBAction func save(_ sender: UIBarButtonItem) {
-        let selectedGene = gene
-        if !savedGeneNames.contains(where: {$0 == selectedGene?.geneName}) {
-            savedGeneNames.append(gene?.geneName)
+    @IBAction func saveButtonClicked(_ sender: UIBarButtonItem) {
+        let selectedGene = gene!
+        
+        if !selectedGene.isSaved {
+            savedGeneNames.append((gene?.geneName)!)
+            UserDefaults.standard.set(savedGeneNames, forKey: ConstantString.userDefaultsKey)
+        } else {
+            let index = savedGeneNames.index(of: selectedGene.geneName)
+            savedGeneNames.remove(at: index!)
             UserDefaults.standard.set(savedGeneNames, forKey: ConstantString.userDefaultsKey)
         }
-        
+        selectedGene.isSaved = !selectedGene.isSaved
+        button.isSelected = !button.isSelected
     }
     
     // MARK: - View Setup
@@ -46,8 +53,14 @@ class DetailTableViewController: UITableViewController {
         super.viewDidLoad()
         // remove seperator lines from empty cells
         tableView.tableFooterView = UIView(frame: CGRect.zero)
+        setUpBarButtonItemView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        savedGeneNames = UserDefaults.standard.object(forKey: ConstantString.userDefaultsKey) as? [String] ?? [String]()
+        button.isSelected = savedGeneNames.contains((gene?.geneName)!)
+    }
     
     // MARK: - Table view data source
 
@@ -82,6 +95,19 @@ class DetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: - Private Methods
+    private func setUpBarButtonItemView() {
+        button.setImage(UIImage(named: ConstantString.unSavedImageName), for: .normal)
+        button.setImage(UIImage(named: ConstantString.savedImageName), for: .highlighted)
+        button.setImage(UIImage(named: ConstantString.savedImageName), for: .selected)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.addTarget(self, action: #selector(saveButtonClicked(_:)), for: .touchDown)
+        let shareBarButtonItem = navigationItem.rightBarButtonItem
+        let saveBarButtonItem = UIBarButtonItem(customView: button)
+        navigationItem.setRightBarButtonItems([shareBarButtonItem!, saveBarButtonItem], animated: true)
+        button.isSelected = savedGeneNames.contains((gene?.geneName)!)
     }
     
 }

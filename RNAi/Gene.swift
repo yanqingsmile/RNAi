@@ -13,6 +13,7 @@ class Gene : NSObject {
     let accessionNumber: String
     let sequences: [String]
     let efficiency: [Double]
+    var isSaved = false
     
     init(geneName: String, accessionNumber: String, sequences: [String], efficiency: [Double]) {
         self.geneName = geneName

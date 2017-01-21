@@ -29,7 +29,7 @@ struct SegueIdentifier {
 struct ConstantString {
     static let userDefaultsKey = "savedGeneNames"
     static let geneNCBIUrlPrefix = "https://www.ncbi.nlm.nih.gov/gene/?term="
-    
-
+    static let unSavedImageName = "emptyHeart"
+    static let savedImageName = "filledHeart"
 }
 
