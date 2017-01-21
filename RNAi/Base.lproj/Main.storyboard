@@ -13,7 +13,7 @@
         <scene sceneID="Fkp-SY-pvU">
             <objects>
                 <navigationController title="Master" id="mYk-MB-VBI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="IC2-CA-XKa"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="IC2-CA-XKa"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="black" id="aVj-Tx-dno">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -340,7 +340,7 @@
         <scene sceneID="OGU-H9-AEB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="70d-6Y-N3y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Saved" id="A3p-0R-dEX"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="Hearts-30" id="A3p-0R-dEX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xEf-Ti-mRO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -357,4 +357,7 @@
             <point key="canvasLocation" x="868.11594202898561" y="51.358695652173914"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Hearts-30" width="30" height="30"/>
+    </resources>
 </document>

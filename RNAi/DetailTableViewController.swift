@@ -44,8 +44,7 @@ class DetailTableViewController: UITableViewController {
             savedGeneNames.remove(at: index!)
             UserDefaults.standard.set(savedGeneNames, forKey: ConstantString.userDefaultsKey)
         }
-        selectedGene.isSaved = !selectedGene.isSaved
-        button.isSelected = !button.isSelected
+            button.isSelected = !button.isSelected
     }
     
     // MARK: - View Setup

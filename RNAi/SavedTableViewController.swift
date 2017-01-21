@@ -91,12 +91,6 @@ class SavedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             var savedGeneNameList = UserDefaults.standard.object(forKey: ConstantString.userDefaultsKey) as? [String]
-            let toDeleteGeneName = savedGeneNameList![indexPath.row]
-            for gene in genes {
-                if gene.geneName == toDeleteGeneName {
-                    gene.isSaved = !gene.isSaved
-                }
-            }
             savedGeneNameList?.remove(at: indexPath.row)
             UserDefaults.standard.set(savedGeneNameList, forKey: ConstantString.userDefaultsKey)
             tableView.deleteRows(at: [indexPath], with: .fade)

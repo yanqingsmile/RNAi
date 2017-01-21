@@ -13,7 +13,12 @@ class Gene : NSObject {
     let accessionNumber: String
     let sequences: [String]
     let efficiency: [Double]
-    var isSaved = false
+    var isSaved: Bool {
+        if let savedGeneNames = UserDefaults.standard.object(forKey: ConstantString.userDefaultsKey) as? [String] {
+            return savedGeneNames.contains(geneName)
+        }
+        return false
+    }
     
     init(geneName: String, accessionNumber: String, sequences: [String], efficiency: [Double]) {
         self.geneName = geneName
