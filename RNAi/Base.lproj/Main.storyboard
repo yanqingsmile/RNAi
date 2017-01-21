@@ -304,6 +304,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="ILk-Eu-uY3" kind="show" identifier="showDetailFromSaved" action="showDetailViewController:sender:" id="4ct-Dk-d99"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -342,7 +345,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="70d-6Y-N3y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Saved" image="Hearts-30" id="A3p-0R-dEX"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xEf-Ti-mRO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="xEf-Ti-mRO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.20392156859999999" green="0.7843137255" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -360,4 +363,7 @@
     <resources>
         <image name="Hearts-30" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5w8-nV-Lhx"/>
+    </inferredMetricsTieBreakers>
 </document>

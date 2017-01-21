@@ -100,14 +100,19 @@ class SavedTableViewController: UITableViewController {
     
 
     
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
+        let detailTableVC = segue.destination as! DetailTableViewController
+        if let selectedCell = sender as? UITableViewCell {
+            for gene in genes {
+                if gene.geneName == selectedCell.textLabel?.text {
+                    detailTableVC.gene = gene
+                }
+            }
+        }
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

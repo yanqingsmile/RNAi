@@ -24,6 +24,7 @@ struct TextLabel {
 
 struct SegueIdentifier {
     static let showDetailFromMasterToDetail = "ShowDetailFromMaster"
+    static let showDetailFromSavedToDetail = "showDetailFromSaved"
 }
 
 struct ConstantString {
