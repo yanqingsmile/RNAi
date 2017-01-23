@@ -140,6 +140,7 @@
 				TargetAttributes = {
 					19D4243C1E2602EA001529FA = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = VXS2P832YK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -310,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VXS2P832YK;
 				INFOPLIST_FILE = RNAi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -324,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VXS2P832YK;
 				INFOPLIST_FILE = RNAi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
