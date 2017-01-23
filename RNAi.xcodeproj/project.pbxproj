@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1932779F1E346291005872C2 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1932779E1E346291005872C2 /* data.plist */; };
+		193277A21E35D7DA005872C2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193277A11E35D7DA005872C2 /* iAd.framework */; };
 		19D424411E2602EA001529FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D424401E2602EA001529FA /* AppDelegate.swift */; };
 		19D424461E2602EA001529FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D424441E2602EA001529FA /* Main.storyboard */; };
 		19D424481E2602EA001529FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D424471E2602EA001529FA /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1932779E1E346291005872C2 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		193277A11E35D7DA005872C2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		19D4243D1E2602EA001529FA /* RNAi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNAi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D424401E2602EA001529FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19D424451E2602EA001529FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,17 +47,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				193277A21E35D7DA005872C2 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		193277A01E35D7DA005872C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				193277A11E35D7DA005872C2 /* iAd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		19D424341E2602EA001529FA = {
 			isa = PBXGroup;
 			children = (
 				19D4243F1E2602EA001529FA /* RNAi */,
 				19D4243E1E2602EA001529FA /* Products */,
+				193277A01E35D7DA005872C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +99,7 @@
 		19D424521E26031A001529FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1932779E1E346291005872C2 /* data.plist */,
 				19D424401E2602EA001529FA /* AppDelegate.swift */,
 				19D424471E2602EA001529FA /* Assets.xcassets */,
 				19D424491E2602EA001529FA /* LaunchScreen.storyboard */,
@@ -154,6 +169,7 @@
 			files = (
 				19D4244B1E2602EA001529FA /* LaunchScreen.storyboard in Resources */,
 				19D424481E2602EA001529FA /* Assets.xcassets in Resources */,
+				1932779F1E346291005872C2 /* data.plist in Resources */,
 				19D424461E2602EA001529FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

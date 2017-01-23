@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 class MasterTableViewController: UITableViewController {
 
@@ -23,6 +24,7 @@ class MasterTableViewController: UITableViewController {
     // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        canDisplayBannerAds = true
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false

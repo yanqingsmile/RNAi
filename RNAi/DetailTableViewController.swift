@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import iAd
 
 class DetailTableViewController: UITableViewController {
 
@@ -26,8 +27,6 @@ class DetailTableViewController: UITableViewController {
     }
     
     @IBAction func share(_ sender: UIBarButtonItem) {
-        print(gene!)
-
         let vc = UIActivityViewController(activityItems: [gene?.description ?? ""], applicationActivities:[])
         present(vc, animated: true, completion: nil)
     }
@@ -53,6 +52,7 @@ class DetailTableViewController: UITableViewController {
         // remove seperator lines from empty cells
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         setUpBarButtonItemView()
+        canDisplayBannerAds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,7 +77,7 @@ class DetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailCellIdentifier, for: indexPath) as! DetailInformationTableViewCell
         cell.sequenceLabel.text = gene?.sequences[indexPath.row]
-        cell.efficiencyLabel.text = ((gene?.efficiency[indexPath.row] ?? 0) * 100).roundTo2f() as String + " %"
+        cell.efficiencyLabel.text = (gene?.efficiency[indexPath.row] ?? 0).roundTo2f() as String + " %"
         return cell
     }
     

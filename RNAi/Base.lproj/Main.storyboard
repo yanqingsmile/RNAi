@@ -97,9 +97,7 @@
                             <outlet property="delegate" destination="sm7-kx-PWt" id="o4z-IY-JjT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1bo-Qu-iSE">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Library" id="1bo-Qu-iSE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmt-IR-VfX" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="2481.1594202898555" y="-630.16304347826087"/>
         </scene>
-        <!--Saved Table View Controller-->
+        <!--Saved-->
         <scene sceneID="VLL-7L-eBX">
             <objects>
                 <tableViewController id="OoW-xt-IWW" customClass="SavedTableViewController" customModule="RNAi" customModuleProvider="target" sceneMemberID="viewController">
@@ -305,7 +303,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="ILk-Eu-uY3" kind="show" identifier="showDetailFromSaved" action="showDetailViewController:sender:" id="4ct-Dk-d99"/>
+                                    <segue destination="ILk-Eu-uY3" kind="show" identifier="showDetailFromSaved" id="cbb-Vn-dmJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -314,11 +312,13 @@
                             <outlet property="delegate" destination="OoW-xt-IWW" id="XWD-V5-lXI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7eE-kx-SCg"/>
+                    <navigationItem key="navigationItem" title="Saved" id="7eE-kx-SCg"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="736"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Miu-o0-hTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775.3623188405797" y="51.358695652173914"/>
+            <point key="canvasLocation" x="1615" y="281"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9C3-5V-JoW">
@@ -345,7 +345,9 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="70d-6Y-N3y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Saved" image="Hearts-30" id="A3p-0R-dEX"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="xEf-Ti-mRO">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="736"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="xEf-Ti-mRO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.20392156859999999" green="0.7843137255" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -357,13 +359,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7il-BZ-abV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868.11594202898561" y="51.358695652173914"/>
+            <point key="canvasLocation" x="868" y="195"/>
         </scene>
     </scenes>
     <resources>
         <image name="Hearts-30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5w8-nV-Lhx"/>
+        <segue reference="cbb-Vn-dmJ"/>
     </inferredMetricsTieBreakers>
 </document>
