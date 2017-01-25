@@ -30,6 +30,7 @@ class MasterTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        searchController.searchBar.placeholder = "Search from \(genes.count) genes"
         searchController.searchBar.delegate = self
         
         

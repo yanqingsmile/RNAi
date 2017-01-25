@@ -42,7 +42,7 @@ class Gene : NSObject {
         
     }
     override var description : String {
-        var siRNAInformation = "Antisense Sequence" + "\n"
+        var siRNAInformation = "Antisense Strand" + "\n"
         var totalDescription = ""
         for i in 0...sequences.count - 1 {
             siRNAInformation +=  "\(sequences[i])" + "\n"
