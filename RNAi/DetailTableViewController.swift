@@ -26,6 +26,15 @@ class DetailTableViewController: UITableViewController {
         present(sfSafariVC, animated: true, completion: nil)
     }
     
+    
+    @IBAction func viewEfficiencyButtonClicked(_ sender: UIButton) {
+        let catalogNumber = (gene?.catalogNumber)!
+        let urlPrefix = ConstantString.genomeRNAiURLPrefix
+        let url = URL(string: urlPrefix + catalogNumber)
+        let sfSafariVC = SFSafariViewController(url: url!)
+        present(sfSafariVC, animated: true, completion: nil)
+    }
+    
     @IBAction func share(_ sender: UIBarButtonItem) {
         let vc = UIActivityViewController(activityItems: [gene?.description ?? ""], applicationActivities:[])
         present(vc, animated: true, completion: nil)
@@ -77,7 +86,6 @@ class DetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.detailCellIdentifier, for: indexPath) as! DetailInformationTableViewCell
         cell.sequenceLabel.text = gene?.sequences[indexPath.row]
-        cell.efficiencyLabel.text = (gene?.efficiency[indexPath.row] ?? 0).roundTo2f() as String + " %"
         return cell
     }
     
@@ -109,29 +117,5 @@ class DetailTableViewController: UITableViewController {
         button.isSelected = savedGeneNames.contains((gene?.geneName)!)
     }
     
-}
-
-
-extension Double
-{
-    func roundTo0f() -> NSString
-    {
-        return NSString(format: "%.0f", self)
-    }
-    
-    func roundTo1f() -> NSString
-    {
-        return NSString(format: "%.1f", self)
-    }
-    
-    func roundTo2f() -> NSString
-    {
-        return NSString(format: "%.2f", self)
-    }
-    
-    func roundToNf(n : Int) -> NSString
-    {
-        return NSString(format: "%.\(n)f" as NSString, self)
-    }
 }
 

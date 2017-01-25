@@ -13,7 +13,7 @@ class DetailInformationTableViewCell: UITableViewCell {
     // MARK: IBOutlets
     @IBOutlet weak var sequenceLabel: CopyableLabel!
     
-    @IBOutlet weak var efficiencyLabel: UILabel!
+    
     
 
     override func awakeFromNib() {

@@ -131,8 +131,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antisense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao8-Xq-nCD">
-                                            <rect key="frame" x="22" y="106.5" width="79.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antisense Strand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao8-Xq-nCD">
+                                            <rect key="frame" x="22" y="106.5" width="138" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -144,19 +144,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efficiency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTu-Y3-wYK">
-                                            <rect key="frame" x="319.5" y="106.5" width="79" height="21"/>
+                                            <rect key="frame" x="225" y="106.5" width="79" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accession Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lns-VM-00K">
-                                            <rect key="frame" x="248" y="37.5" width="150.5" height="21"/>
+                                            <rect key="frame" x="153.5" y="37.5" width="150.5" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwh-lJ-aLc">
-                                            <rect key="frame" x="295" y="60.5" width="103" height="33"/>
+                                            <rect key="frame" x="200.5" y="60.5" width="103" height="33"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <state key="normal" title="GeneNumber"/>
                                             <connections>
@@ -200,27 +200,34 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sequenceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-3i-A8x" customClass="CopyableLabel" customModule="RNAi" customModuleProvider="target">
-                                            <rect key="frame" x="22" y="12" width="110.5" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <rect key="frame" x="22" y="12" width="110.5" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="efficiencyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yva-g1-qQz" customClass="CopyableLabel" customModule="RNAi" customModuleProvider="target">
-                                            <rect key="frame" x="288" y="12" width="110" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak4-r6-VTw">
+                                            <rect key="frame" x="264" y="6" width="40" height="32"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="View "/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            </variation>
+                                            <connections>
+                                                <action selector="viewEfficiencyButtonClicked:" destination="ILk-Eu-uY3" eventType="touchUpInside" id="9qE-nr-PTm"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Yva-g1-qQz" secondAttribute="trailing" constant="8" id="PPI-ee-Ds5"/>
-                                        <constraint firstItem="Yva-g1-qQz" firstAttribute="centerY" secondItem="XFK-3t-oBF" secondAttribute="centerY" id="cdX-wz-HrU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ak4-r6-VTw" secondAttribute="trailing" constant="8" id="3Yw-cC-d6d"/>
+                                        <constraint firstItem="ak4-r6-VTw" firstAttribute="centerY" secondItem="sk6-3i-A8x" secondAttribute="centerY" id="8Y6-W5-nMq"/>
                                         <constraint firstItem="sk6-3i-A8x" firstAttribute="leading" secondItem="XFK-3t-oBF" secondAttribute="leadingMargin" constant="14" id="dI6-qN-tKR"/>
-                                        <constraint firstItem="sk6-3i-A8x" firstAttribute="centerY" secondItem="Yva-g1-qQz" secondAttribute="centerY" id="xDZ-fZ-m01"/>
+                                        <constraint firstItem="sk6-3i-A8x" firstAttribute="centerY" secondItem="XFK-3t-oBF" secondAttribute="centerY" id="yp0-uW-8t0"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="efficiencyLabel" destination="Yva-g1-qQz" id="9nC-4R-1De"/>
                                     <outlet property="sequenceLabel" destination="sk6-3i-A8x" id="1vo-fD-HcW"/>
                                 </connections>
                             </tableViewCell>
