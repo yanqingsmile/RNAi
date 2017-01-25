@@ -131,8 +131,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antisense Strand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao8-Xq-nCD">
-                                            <rect key="frame" x="22" y="106.5" width="138" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sense Strand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao8-Xq-nCD">
+                                            <rect key="frame" x="22" y="106.5" width="107" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -183,13 +183,13 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="AntisenseTitleLabel" destination="ao8-Xq-nCD" id="Y7e-Ew-vhs"/>
-                                    <outlet property="EfficiencyTitleLabel" destination="bTu-Y3-wYK" id="sxs-dB-DHw"/>
                                     <outlet property="accessionNumberTitleLabel" destination="Lns-VM-00K" id="ohx-Z8-uBU"/>
+                                    <outlet property="efficiencyTitleLabel" destination="bTu-Y3-wYK" id="9GH-kw-neX"/>
                                     <outlet property="geneNameLabel" destination="pbA-7d-Pjf" id="gsR-xl-Ww5"/>
                                     <outlet property="geneNumberButton" destination="gwh-lJ-aLc" id="wRh-WI-ydb"/>
                                     <outlet property="geneTitleLabel" destination="mjn-u9-zwu" id="09E-Gq-UTo"/>
                                     <outlet property="intendedTargetLabel" destination="D6A-qN-rsp" id="4Yu-ak-bTr"/>
+                                    <outlet property="senseTitleLabel" destination="ao8-Xq-nCD" id="yex-r8-SA0"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="siRNADetailIdentifier" id="s8u-ad-ktj" userLabel="siRNADetailCell" customClass="DetailInformationTableViewCell" customModule="RNAi" customModuleProvider="target">

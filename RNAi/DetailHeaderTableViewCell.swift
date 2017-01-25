@@ -14,8 +14,8 @@ class DetailHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var geneTitleLabel: UILabel!
     @IBOutlet weak var accessionNumberTitleLabel: UILabel!
     @IBOutlet weak var geneNameLabel: UILabel!
-    @IBOutlet weak var AntisenseTitleLabel: UILabel!
-    @IBOutlet weak var EfficiencyTitleLabel: UILabel!
+    @IBOutlet weak var senseTitleLabel: UILabel!
+    @IBOutlet weak var efficiencyTitleLabel: UILabel!
     
     @IBOutlet weak var geneNumberButton: UIButton!
 }

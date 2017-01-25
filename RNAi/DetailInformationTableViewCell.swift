@@ -13,9 +13,6 @@ class DetailInformationTableViewCell: UITableViewCell {
     // MARK: IBOutlets
     @IBOutlet weak var sequenceLabel: CopyableLabel!
     
-    
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
