@@ -61,7 +61,6 @@ class DetailTableViewController: UITableViewController {
         // remove seperator lines from empty cells
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         setUpBarButtonItemView()
-        canDisplayBannerAds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

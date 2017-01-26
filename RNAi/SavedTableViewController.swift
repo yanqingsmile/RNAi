@@ -26,7 +26,6 @@ class SavedTableViewController: UITableViewController {
     // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
-        canDisplayBannerAds = true
         
 
         // Uncomment the following line to preserve selection between presentations

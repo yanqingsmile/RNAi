@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,11 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate(set) var genes: [Gene] = []
     var window: UIWindow?
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         readPlistData()
         UINavigationBar.appearance().tintColor = UIColor.white
+        
+        // Initialize Google Mobile Ads SDK
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3264388918879738~6896285006")
         return true
     }
     

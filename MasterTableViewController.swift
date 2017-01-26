@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import iAd
+import GoogleMobileAds
 
 class MasterTableViewController: UITableViewController {
 
@@ -24,8 +24,8 @@ class MasterTableViewController: UITableViewController {
     // MARK: - View Setup
     override func viewDidLoad() {
         super.viewDidLoad()
-        canDisplayBannerAds = true
         
+        // Set up searchController
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
@@ -33,9 +33,18 @@ class MasterTableViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search from \(genes.count) genes"
         searchController.searchBar.delegate = self
         
+        // Set ads banner
+        let origin = CGPoint(x: 0,
+                             y: self.view.frame.size.height - (self.tabBarController?.tabBar.frame.size.height)! - 50)
+        let bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait, origin: origin)
+        bannerView.adUnitID = "ca-app-pub-3264388918879738/8373018203"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        //request.testDevices = [kGADSimulatorID]
+        bannerView.load(request)
         
+        self.tabBarController?.view.addSubview(bannerView)
     }
-
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {

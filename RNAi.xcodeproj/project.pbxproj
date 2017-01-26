@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		193277A21E35D7DA005872C2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193277A11E35D7DA005872C2 /* iAd.framework */; };
 		19A0A4821E386B8D00257BDE /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A0A4811E386B8D00257BDE /* data.plist */; };
 		19D424411E2602EA001529FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D424401E2602EA001529FA /* AppDelegate.swift */; };
 		19D424461E2602EA001529FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19D424441E2602EA001529FA /* Main.storyboard */; };
@@ -21,9 +20,11 @@
 		19F925EB1E2DEB23001416A5 /* DetailInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F925EA1E2DEB22001416A5 /* DetailInformationTableViewCell.swift */; };
 		19F925EE1E3011A4001416A5 /* SavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F925ED1E3011A4001416A5 /* SavedTableViewController.swift */; };
 		19F925F01E31E9F0001416A5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F925EF1E31E9F0001416A5 /* Constants.swift */; };
+		52269E342127EABB6AB9DCF3 /* libPods-RNAi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0C2D31474BAE16BC329ADD /* libPods-RNAi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0192557926313415CF2B08F5 /* Pods-RNAi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNAi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNAi/Pods-RNAi.debug.xcconfig"; sourceTree = "<group>"; };
 		193277A11E35D7DA005872C2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		19A0A4811E386B8D00257BDE /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		19D4243D1E2602EA001529FA /* RNAi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNAi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +41,8 @@
 		19F925EA1E2DEB22001416A5 /* DetailInformationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInformationTableViewCell.swift; sourceTree = "<group>"; };
 		19F925ED1E3011A4001416A5 /* SavedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedTableViewController.swift; sourceTree = "<group>"; };
 		19F925EF1E31E9F0001416A5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CB0C2D31474BAE16BC329ADD /* libPods-RNAi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNAi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD42174D0A9B84C412861711 /* Pods-RNAi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNAi.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNAi/Pods-RNAi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				193277A21E35D7DA005872C2 /* iAd.framework in Frameworks */,
+				52269E342127EABB6AB9DCF3 /* libPods-RNAi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				193277A11E35D7DA005872C2 /* iAd.framework */,
+				CB0C2D31474BAE16BC329ADD /* libPods-RNAi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -68,6 +72,7 @@
 				19D4243F1E2602EA001529FA /* RNAi */,
 				19D4243E1E2602EA001529FA /* Products */,
 				193277A01E35D7DA005872C2 /* Frameworks */,
+				C85934176EB4CA18AFEEE1E6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +113,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C85934176EB4CA18AFEEE1E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0192557926313415CF2B08F5 /* Pods-RNAi.debug.xcconfig */,
+				DD42174D0A9B84C412861711 /* Pods-RNAi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +129,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19D4244F1E2602EA001529FA /* Build configuration list for PBXNativeTarget "RNAi" */;
 			buildPhases = (
+				1056600614B955E70A47D936 /* [CP] Check Pods Manifest.lock */,
 				19D424391E2602EA001529FA /* Sources */,
 				19D4243A1E2602EA001529FA /* Frameworks */,
 				19D4243B1E2602EA001529FA /* Resources */,
+				D1BE6B4933BF3F89FFB86BA1 /* [CP] Embed Pods Frameworks */,
+				84B340700E3A039CA128983D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,6 +193,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1056600614B955E70A47D936 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		84B340700E3A039CA128983D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNAi/Pods-RNAi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1BE6B4933BF3F89FFB86BA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNAi/Pods-RNAi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19D424391E2602EA001529FA /* Sources */ = {
@@ -309,14 +374,18 @@
 		};
 		19D424501E2602EA001529FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0192557926313415CF2B08F5 /* Pods-RNAi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = VXS2P832YK;
 				INFOPLIST_FILE = RNAi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yanqing.siRNAPool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4140c70b-c8bd-44da-9980-5a8da42bfce0";
+				PROVISIONING_PROFILE_SPECIFIER = "Dev Profile";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -324,6 +393,7 @@
 		};
 		19D424511E2602EA001529FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD42174D0A9B84C412861711 /* Pods-RNAi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
