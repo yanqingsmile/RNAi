@@ -192,11 +192,11 @@
                                     <outlet property="senseTitleLabel" destination="ao8-Xq-nCD" id="yex-r8-SA0"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="siRNADetailIdentifier" id="s8u-ad-ktj" userLabel="siRNADetailCell" customClass="DetailInformationTableViewCell" customModule="RNAi" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="siRNADetailIdentifier" id="s8u-ad-ktj" userLabel="siRNADetailCell" customClass="DetailInformationTableViewCell" customModule="RNAi" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="173" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s8u-ad-ktj" id="XFK-3t-oBF">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sequenceLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-3i-A8x" customClass="CopyableLabel" customModule="RNAi" customModuleProvider="target">
